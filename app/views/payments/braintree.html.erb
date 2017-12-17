@@ -1,0 +1,20 @@
+<%= form_tag action: :make_payment, product_id: params[:product_id], method: :post  do%>
+<table class="table table-striped">
+  <tr>
+    <td><%= label_tag :credit_card_number%></td>
+    <td><%= text_field_tag :credit_card_number%></td>
+  </tr>
+  <tr>
+    <td><%= label_tag :expiry%></td>
+    <td><%= date_select :date, :expiry%></td>
+  </tr>
+  <tr>
+    <td><%= label_tag :ccv%></td>
+    <td><%= text_field_tag :ccv%></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Make payment"%></td>
+    <td></td>
+  </tr>
+</table>
+<%end%>

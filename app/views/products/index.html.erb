@@ -1,0 +1,34 @@
+
+<!-- <%= @users.inspect %> -->
+
+<%= link_to "Download in CSV", download_in_csv_products_path%>
+<%= link_to "Download in JSON", download_in_json_products_path(format: :json)%>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Price</th>
+    <th>Brand</th>
+  </tr>
+  <% @products.each do | i | %>
+    <tr>
+      <td>
+        <% if i.images.present?%>
+          <% i.images.each do | image |%>
+            <%= image_tag image.photo(:small) %>
+          <%end%>
+        <%end%>
+      </td>
+      <td><%= i.name %></td>
+      <td><%= i.size %></td>
+      <td><%= i.price %></td>
+      <td><%= i.brand %></td>
+      <td><%= link_to "Buy", braintree_payments_path(product_id: i.id)%></td>
+      <td><%= link_to "Edit", edit_product_path(i)%></td>
+      <td><%= link_to "Show", product_path(i)%></td>
+      <td><%= link_to "Delete", i, method: "delete", data: {confirm: "Are you sure?"}%></td>
+    </tr>
+  <%end%>
+</table>
+<!-- <%= link_to "Create New User", new_user_path%> -->
+<%= link_to "+Product", new_product_path%>

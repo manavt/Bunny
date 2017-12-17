@@ -1,0 +1,3 @@
+User.all.each do | i |
+  SendEmailMailer.news_subs(i).deliver_now!
+end

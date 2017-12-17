@@ -1,0 +1,21 @@
+<%= form_tag action: :sign_in, method: :post  do%>
+<table class="table table-striped">
+  <tr>
+    <td><%= label_tag :email%></td>
+    <td><%= text_field_tag :email%></td>
+  </tr>
+  <tr>
+    <td><%= label_tag :password%></td>
+    <td><%= text_field_tag :password%></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Sign In"%></td>
+    <td></td>
+  </tr>
+</table>
+<%end%>
+
+
+
+<%= link_to "Sign up", new_user_path%>|
+<%= link_to "Facebook Login", "/auth/facebook"%>

@@ -1,0 +1,7 @@
+id,name,size,price,brand,description,created_at,updated_at
+1,Tshirt,,300,Lee,From the Store.,2017-11-20 14:07:23 UTC,2017-11-20 14:07:23 UTC
+2,Jeans,,200,Levis,XYZ,2017-11-20 14:09:52 UTC,2017-11-20 14:09:52 UTC
+3,jeans from spykar,XL,300,Spykar,From spykar,2017-11-20 14:15:07 UTC,2017-11-20 14:15:07 UTC
+4,"",M,"","","",2017-11-20 14:50:32 UTC,2017-11-20 14:50:32 UTC
+5,Camera's,L,300,Canon,From USA,2017-11-20 14:53:45 UTC,2017-11-20 14:53:45 UTC
+6,"Camera's, Camera, DSLR",L,300,Canon,From USA,2017-11-20 14:55:41 UTC,2017-11-20 14:55:41 UTC

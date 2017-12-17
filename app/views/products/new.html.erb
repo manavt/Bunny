@@ -1,0 +1,47 @@
+<!-- <% "form_for is the helper to define a form" %>
+form_for object do
+    columns_names
+end
+ -->
+
+<% if @product.errors.any? %>
+  <% @product.errors.each do | key, message |%>
+    <%= key.to_s + " " + message.to_s %>
+  <%end%>
+<%end%>
+<%= form_for @product do | f |%>
+<table class="table table-striped">
+  <tr>
+    <td><%= f.label :name%></td>
+    <td><%= f.text_field :name%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :size%></td>
+    <td><%= f.select :size, Size.pluck(:size_name) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :price%></td>
+    <td><%= f.text_field :price%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :brand%></td>
+    <td><%= f.text_field :brand%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :description%></td>
+    <td><%= f.text_area :description%></td>
+  </tr>
+  <tr>
+    <%= f.fields_for :image do | im |%>
+     <td><%= im.label :photo%></td>
+     <td><%= im.file_field :photo, multiple: true %></td>
+    <%end%>
+  </tr>
+    <td><%= f.submit %></td>
+  </tr>
+</table>
+<%end%>
+
+
+
+<!-- <%= link_to "Sign In" , login_page_users_path%> -->
